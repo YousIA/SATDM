@@ -6,13 +6,13 @@
 #include <sys/time.h>
 #include <unistd.h>
 //using namespace std;
-# define m 10000// nombre de clauses
-#define  n 50// nombre de variables 
+# define m 10000// number of constraints
+#define  n 50// number of variables 
 #define k 10 // le nombre de clusters
 int nb=1;
-int instance[m][n]; // instance SAT qui contient m clauses et n vairables 
-int clusters[m]; // contient les cluster des m clauses 
-int clusters_ord[m][2]; // clusters ordonée selon le nombre de clusters
+int instance[m][n]; // list of Constraints
+int clusters[m]; // list of clusters 
+int clusters_ord[m][2]; // clusters sorted according to the number of clusters
 typedef struct bbb{
 int centre[n];
 }center;
@@ -22,8 +22,8 @@ typedef struct aaa{
 }objet;
 objet centers[k];
 int table_nbr[k];// contains the number of clauses on each cluster
-void creer_instance(); // créer l'instance SAT  de m clauses et n variables  
-void creer_instance_new(); // créer l'instance SAT  de m clauses et n variables 
+void creer_instance(); // crÃ©er l'instance SAT  de m clauses et n variables  
+void creer_instance_new(); // crÃ©er l'instance SAT  de m clauses et n variables 
 void display_clusters(); // afficher les clusters 
 int MADP();// Minimize average distance between points in cluster
 int distance(int t[], int v[]); // calculate distance between clauses
